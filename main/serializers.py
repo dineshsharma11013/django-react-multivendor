@@ -14,7 +14,7 @@ class VendorSerializer(serializers.ModelSerializer):
     #     self.Meta.depth = 1
 
 class VendorDetailSerializer(serializers.ModelSerializer):
-    #User = VendorSerializer
+    #User = VendorSerializer()
 
     class Meta:
         model = models.Vendor
@@ -27,13 +27,19 @@ class VendorDetailSerializer(serializers.ModelSerializer):
 
 
 class ProductListSerializer(serializers.ModelSerializer):
+    #vendor = VendorSerializer()
     class Meta:
-        model = models.Product
+        model = models.Product 
         fields = '__all__'
-        #depth = 1
+        depth = 1
 
-    def __init__(self, *args, **kwargs):
-        super(ProductListSerializer, self).__init__(*args, *kwargs)
-        self.Meta.depth = 1
+    # def __init__(self, *args, **kwargs):
+    #     super(ProductListSerializer, self).__init__(*args, *kwargs)
+    #     self.Meta.depth = 1
 
 
+class ProductDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Product 
+        fields = '__all__'
+        depth = 1
