@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions, pagination
+from rest_framework import generics, permissions, pagination, viewsets
 from . import serializers
 from . import models
 
@@ -54,7 +54,17 @@ class OrderDetail(generics.ListAPIView):
 
 
 
+class CustomerAddressViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.CustomerAddressSerializer
+    queryset = models.CustomerAddress.objects.all()
 
+# with viewset, we don't need to create any other router for update and delete. all will be done from this
+# 11 video series
+
+
+class ProductRatingViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.ProductRatingSerializer
+    queryset = models.ProductRating.objects.all()
 
 
 

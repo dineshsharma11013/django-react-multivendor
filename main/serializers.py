@@ -27,11 +27,12 @@ class VendorDetailSerializer(serializers.ModelSerializer):
 
 
 class ProductListSerializer(serializers.ModelSerializer):
+    product_ratings = serializers.StringRelatedField(many=True, read_only=True)
     #vendor = VendorSerializer()
     class Meta:
         model = models.Product 
-        fields = '__all__'
-        depth = 1
+        fields = ['id', 'category', 'vendor', 'title', 'detail', 'price', 'product_ratings'] #'__all__'
+        #depth = 1
 
     # def __init__(self, *args, **kwargs):
     #     super(ProductListSerializer, self).__init__(*args, *kwargs)
@@ -39,10 +40,14 @@ class ProductListSerializer(serializers.ModelSerializer):
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
+    product_ratings = serializers.StringRelatedField(many=True, read_only=True) #PrimaryKeyRelatedField
+    #https://www.youtube.com/watch?v=F4-l6hz0bKo&list=PLgnySyq8qZmo3d4uzPefYoGBN9Vpl266U&index=12 for PrimaryKeyRelatedField
+    # product_ratings -- this is same as related_name in ProductRating model now we are joining this table also
+
     class Meta:
         model = models.Product 
-        fields = '__all__'
-        depth = 1
+        fields = ['id', 'category', 'vendor', 'title', 'detail', 'price', 'product_ratings'] #'__all__'
+        #depth = 1
 
 
 # customer
@@ -76,7 +81,7 @@ class OrderSerializer(serializers.ModelSerializer):
         #fields = ['id','user','address']
 
     # def __init__(self, *args, **kwargs):
-    #     super(VendorSerializer, self).__init__(*args, *kwargs)
+    #     super(OrderSerializer, self).__init__(*args, *kwargs)
     #     self.Meta.depth = 1
 
 class OrderDetailSerializer(serializers.ModelSerializer):
@@ -86,3 +91,37 @@ class OrderDetailSerializer(serializers.ModelSerializer):
         model = models.OrderItems
         fields = ['id', 'order', 'product'] #'__all__' #['id','user','address']
         depth = 1
+
+
+class CustomerAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.CustomerAddress
+        fields = ['id', 'customer', 'address', 'default_address']
+        depth = 1
+
+    # def __init__(self, *args, **kwargs):
+    #     super(CustomerAddressSerializer, self).__init__(*args, *kwargs)
+    #     self.Meta.depth = 1
+
+
+class ProductRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ProductRating
+        fields = ['id', 'customer', 'product', 'rating', 'reviews', 'add_time']
+        depth = 1
+
+        # def __init__(self, *args, **kwargs):
+    #     super(ProductRatingSerializer, self).__init__(*args, *kwargs)
+    #     self.Meta.depth = 1
+
+
+
+
+
+
+
+
+
+
+
+
