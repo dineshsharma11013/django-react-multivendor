@@ -68,4 +68,17 @@ class ProductRatingViewSet(viewsets.ModelViewSet):
 
 
 
+class CategoryList(generics.ListCreateAPIView):
+    queryset = models.ProductCategory.objects.all()
+    serializer_class = serializers.CategorySerializer
+    #permission_classes = [permissions.IsAuthenticated]  # this is for single view permission, for project level permission we configured setting file
+
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.ProductCategory.objects.all()
+    serializer_class = serializers.ProductDetailSerializer
+
+
+
+
+
 
