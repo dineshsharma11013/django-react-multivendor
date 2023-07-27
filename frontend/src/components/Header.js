@@ -17,17 +17,22 @@ const Header = () => {
           <li className="nav-item">
             <Link className="nav-link" to="/categories">Categories</Link>
           </li>
-          {/* <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
+          <li className="nav-item">
+            <Link className="nav-link" to="/checkout">My Cart (4)</Link>
+          </li>
+
+          <li className="nav-item dropdown">
+            <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Account
+            </Link>
             <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><Link className="dropdown-item" to="/customer/register">Register</Link></li>
+              <li><Link className="dropdown-item" to="/customer/login">Login</Link></li>
               <li><hr className="dropdown-divider" /></li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
+              <li><Link className="dropdown-item" to="/customer/dashboard">Dashboard</Link></li>
+              <li><Link className="dropdown-item" href="#">Logout</Link></li>
             </ul>
-          </li> */}
+          </li>
          
         </ul>
       
