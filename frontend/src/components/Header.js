@@ -17,10 +17,7 @@ const Header = () => {
           <li className="nav-item">
             <Link className="nav-link" to="/categories">Categories</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/checkout">My Cart (4)</Link>
-          </li>
-
+          
           <li className="nav-item dropdown">
             <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               My Account
@@ -34,6 +31,27 @@ const Header = () => {
             </ul>
           </li>
          
+          <li className="nav-item dropdown">
+            <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Seller Panel
+            </Link>
+            <ul className="dropdown-menu">
+              <li><Link className="dropdown-item" to="/seller/register">Register</Link></li>
+              <li><Link className="dropdown-item" to="/seller/login">Login</Link></li>
+              <li><hr className="dropdown-divider" /></li>
+              <li><Link className="dropdown-item" to="/seller/dashboard">Dashboard</Link></li>
+              <li><Link className="dropdown-item" href="#">Logout</Link></li>
+            </ul>
+          </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/checkout">New Orders (4)</Link>
+          </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/checkout">My Cart (4)</Link>
+          </li>
+
         </ul>
       
       </div>

@@ -1,12 +1,12 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import SellerSidebar from './SellerSidebar'
 
-const Dashboard = () => {
+const SellerDashboard = () => {
   return (
     <div className='container mt-4'>
         <div className='row'>
             <div className='col-md-3 col-12 mb-2'>
-                <Sidebar />
+                <SellerSidebar />
             </div>
             <div className='col-md-9 col-12 mb-2'>
                 <div className='row'>
@@ -21,7 +21,7 @@ const Dashboard = () => {
                     <div className='col-md-4 mb-2'>
                         <div className='card'>
                             <div className='card-body text-center'>
-                                <h4>Total Wishlist</h4>
+                                <h4>Total Orders</h4>
                                 <h4>23</h4>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const Dashboard = () => {
                     <div className='col-md-4 mb-2'>
                         <div className='card'>
                             <div className='card-body text-center'>
-                                <h4>Total Address</h4>
+                                <h4>Total Customers</h4>
                                 <h4>23</h4>
                             </div>
                         </div>
@@ -41,4 +41,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default SellerDashboard
