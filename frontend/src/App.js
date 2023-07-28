@@ -24,6 +24,7 @@ import AddAddress from './components/customer/AddAddress';
 import SellerRegister from './components/seller/SellerRegister';
 import SellerLogin from './components/seller/SellerLogin';
 import SellerDashboard from './components/seller/SellerDashboard';
+import SellerProducts from './components/seller/SellerProducts';
 
 function App() {
   return (
@@ -48,11 +49,11 @@ function App() {
       <Route path='/customer/addreses' element={<AddressList />} />
       <Route path='/customer/add-address' element={<AddAddress />} />
       
-      {/* customer panel */}
+      {/* seller panel */}
       <Route path='/seller/register' element={<SellerRegister />} />
       <Route path='/seller/login' element={<SellerLogin />} />
       <Route path='/seller/dashboard' element={<SellerDashboard />} />
-      
+      <Route path='/seller/products' element={<SellerProducts />} />
       
 
     </Routes>

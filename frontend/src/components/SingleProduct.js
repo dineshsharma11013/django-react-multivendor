@@ -7,7 +7,7 @@ const SingleProduct = (props) => {
     <div className="card" style={{width: '18rem'}}>
   <img src={logo} className="card-img-top" alt="..." /><hr/>
   <div className="card-body">
-    <h4 className="card-title">{props.title}</h4>
+    <h4 className="card-title">{props.product.title}</h4>
     
   </div>
   <div className='card-footer'>
